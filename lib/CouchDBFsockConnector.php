@@ -55,7 +55,7 @@ class CouchDBFsockConnector implements CouchDBConnector
      * Initialize state
      * @param string
      */
-    private function __constuct($url)
+    private function __construct($url)
     {
         foreach (parse_url($url) as $k => $v) $this->$k = $v;
         $this->path = rtrim($this->path, '/') . '/';
@@ -240,7 +240,7 @@ class CouchDBFsockConnector implements CouchDBConnector
 
         if ($raw_body) return (object) array(
             'data' => $body,
-            'content_type' => isset($headers['content-type']) ? $header['content-type'] : NULL
+            'content_type' => isset($headers['content-type']) ? $headers['content-type'] : NULL
         );
         return json_decode($body);
     }

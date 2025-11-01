@@ -332,7 +332,7 @@ class CouchDB implements CouchDBServerAPI, CouchDBDatabaseAPI,
             $body
         );
 
-        if (isset($ret->ok) && $ret->ok) {
+        if (isset($ret->ok) && $ret->ok) {
             $this->id = $this->data->_id = $ret->id;
             $this->rev = $this->data->_rev = $ret->rev;
         }
